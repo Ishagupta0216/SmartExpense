@@ -1,0 +1,159 @@
+.tableWrap {
+  overflow: auto;
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+}
+
+.table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid #eef2f7;
+  background: rgba(248, 250, 252, 0.86);
+  padding: var(--space-4) var(--space-5);
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.table td {
+  border-top: 1px solid #eef2f7;
+  padding: var(--space-4) var(--space-5);
+  color: var(--color-text-soft);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+}
+
+.table tbody tr {
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.table tbody tr:hover {
+  background: #fbfcff;
+}
+
+.category,
+.type {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+}
+
+.category {
+  background: var(--color-background-elevated);
+  color: #475569;
+}
+
+.income {
+  color: #15803d;
+}
+
+.expense {
+  color: #dc2626;
+}
+
+.incomeBadge {
+  background: var(--color-success-soft);
+  color: #15803d;
+}
+
+.expenseBadge {
+  background: var(--color-danger-soft);
+  color: #dc2626;
+}
+
+.empty {
+  display: grid;
+  gap: var(--space-1);
+  padding: 46px var(--space-6);
+  color: var(--color-muted);
+  text-align: center;
+  font-weight: 800;
+  background: linear-gradient(180deg, #ffffff, #fbfcff);
+}
+
+.empty strong {
+  color: var(--color-text);
+}
+
+.empty span {
+  font-size: var(--font-size-sm);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.actions button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-background-elevated);
+  color: var(--color-secondary);
+  transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+}
+
+.actions button:hover {
+  transform: translateY(-1px);
+  background: #e0e7ff;
+  color: var(--color-primary);
+}
+
+.actions .delete {
+  color: #dc2626;
+}
+
+.actions .delete:hover {
+  background: var(--color-danger-soft);
+  color: #dc2626;
+}
+
+.skeletonRow {
+  height: 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #eef2f7 0%, #f8fafc 48%, #eef2f7 100%);
+  background-size: 220% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeletonRow {
+    animation: none;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 120% 0;
+  }
+
+  100% {
+    background-position: -120% 0;
+  }
+}

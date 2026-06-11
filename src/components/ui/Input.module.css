@@ -1,0 +1,30 @@
+.field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.field label {
+  color: #475569;
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  color: var(--color-secondary);
+  outline: 0;
+  padding: 0 13px;
+  font-weight: 650;
+  transition: border var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}

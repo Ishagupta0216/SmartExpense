@@ -1,0 +1,152 @@
+.page {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 239, 255, 0.72)),
+    #ffffff;
+  padding: var(--space-7);
+  box-shadow: var(--shadow-card);
+}
+
+.header p {
+  margin: 0 0 var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.6vw, 2.2rem);
+  letter-spacing: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.stats article,
+.card {
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-card);
+  background: #ffffff;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-standard), box-shadow var(--transition-standard), border var(--transition-standard);
+}
+
+.stats article {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+
+.stats article:hover {
+  border-color: rgba(108, 99, 255, 0.2);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.stats span {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.stats strong {
+  color: var(--color-text);
+  font-size: var(--font-size-xl);
+}
+
+.card {
+  min-width: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: var(--space-6);
+}
+
+.cardHeader h3 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+}
+
+.cardHeader p {
+  margin: var(--space-1) 0 0;
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+.deleteToast {
+  display: grid;
+  gap: var(--space-3);
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+.deleteToast div {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.deleteToast button {
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.deleteToast button:first-child {
+  background: var(--color-background-elevated);
+  color: var(--color-secondary);
+}
+
+.deleteToast button:last-child {
+  background: var(--color-danger-soft);
+  color: #dc2626;
+}
+
+@media (max-width: 920px) {
+  .header,
+  .cardHeader {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .controls {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 680px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
